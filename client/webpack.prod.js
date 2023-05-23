@@ -7,9 +7,10 @@ const html = require('html-webpack-plugin')
 
 module.exports = merge(common,{
     mode:'production',
-    //context:path.resolve(__dirname,'src'),
+    devtool: 'source-map',
     optimization:{
         chunkIds:'named',// default to 'deterministic' under prod. mode
+        usedExports: true, // Enable tree shaking
         minimizer:[
             '...',
             new cssMinimizer()
