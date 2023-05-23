@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
     context:path.resolve(__dirname,'src'),
-    entry:'./page.js',
+    entry:'./main.js',
     output:{
         clean:true,
         filename:'[name].ini.js',
