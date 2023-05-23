@@ -30,6 +30,9 @@ module.exports = {
                 test:/\.svg$/i,
                 type:'asset/inline', // url-loader
             }
-        ]
-    }
+        ],
+    },
+    resolve: {
+      extensions: ['*', '.js', '.jsx'],
+    },
 }

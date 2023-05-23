@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([["click_js"],{62:(e,t,c)=>{function n(){if(document.getElementById("notice"))return;let e=document.createElement("p");e.setAttribute("id","notice"),e.innerText="created by click.js",document.body.append(e)}c.r(t),c.d(t,{default:()=>n})}}]);
