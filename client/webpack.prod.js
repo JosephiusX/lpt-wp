@@ -1,6 +1,6 @@
 const {merge} = require('webpack-merge')
 const common = require('./webpack.common.js')
-//const path = require('path')
+const path = require('path')
 const cssMinimizer = require('css-minimizer-webpack-plugin')
 const css = require('mini-css-extract-plugin')
 const html = require('html-webpack-plugin')
@@ -19,7 +19,7 @@ module.exports = merge(common,{
         ]
     },
     output:{
-        publicPath:'/orange/'
+        publicPath: '/',
     },
     module:{
         rules:[

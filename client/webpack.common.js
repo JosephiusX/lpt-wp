@@ -3,13 +3,14 @@ const path = require('path')
 module.exports = {
     context:path.resolve(__dirname,'src'),
     entry:'./main.jsx',
-    output:{
-        clean:true,
-        filename:'[name].ini.js',
-        chunkFilename:'[id].chunk.js',
-        assetModuleFilename:'assets/[name].[hash][ext]',
-        path:path.resolve(__dirname,'dist')
-    },
+    output: {
+        publicPath: '/',
+        clean: true,
+        filename: '[name].ini.js',
+        chunkFilename: '[id].chunk.js',
+        assetModuleFilename: 'assets/[name].[hash][ext]',
+        path: path.resolve(__dirname, 'build')
+      },
     module:{
         rules:[
             {

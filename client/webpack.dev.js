@@ -7,6 +7,9 @@ module.exports = merge(common,{
     mode:'development',
     devtool:'inline-source-map',
     context:path.resolve(__dirname,'src'),
+    output: {
+        publicPath: '/',
+    },
     module:{
         rules:[
             {
