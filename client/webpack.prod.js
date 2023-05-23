@@ -5,6 +5,8 @@ const cssMinimizer = require('css-minimizer-webpack-plugin')
 const css = require('mini-css-extract-plugin')
 const html = require('html-webpack-plugin')
 
+const Dotenv = require('dotenv-webpack');
+
 module.exports = merge(common,{
     mode:'production',
     devtool: 'source-map',
@@ -15,6 +17,10 @@ module.exports = merge(common,{
             '...',
             new cssMinimizer()
         ]
+    },
+    loader: 'babel-loader',
+    options: {
+        presets: ['@babel/preset-env', '@babel/preset-react'],
     },
     output:{
         publicPath:'/orange/'
@@ -42,6 +48,7 @@ module.exports = merge(common,{
         ]
     },
     plugins:[
+        new Dotenv(),
         new css({
             filename:'[name].css',
             chunkFilename:'[name].chunk_css.css'
