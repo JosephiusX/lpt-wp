@@ -37,14 +37,12 @@ module.exports = merge(common,{
                 use:[css.loader,'css-loader','sass-loader']
             },
             {
-                test:/\.(jpg|png|jpeg|gif)$/i,
+                test:/\.(jpg|png|jpeg|gif|webp)$/i,
                 type:'asset/resource', // file-loader
                 generator:{
                     filename:'IMG/[hash].[name][ext]',
-                    publicPath:'/apple/',
-                    outputPath:'apple/'
                 }
-            },
+            }
         ]
     },
     plugins:[
