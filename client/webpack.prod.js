@@ -18,10 +18,6 @@ module.exports = merge(common,{
             new cssMinimizer()
         ]
     },
-    loader: 'babel-loader',
-    options: {
-        presets: ['@babel/preset-env', '@babel/preset-react'],
-    },
     output:{
         publicPath:'/orange/'
     },
@@ -30,11 +26,24 @@ module.exports = merge(common,{
             {
                 test:/\.css$/i,
                 //use:['style-loader','css-loader']
-                use:[css.loader,'css-loader']
+                use:[
+                  {
+                    loader: css.loader,
+                    options: { /* options here */ }
+                  },
+                  'css-loader'
+                ]
             },
             {
                 test:/\.scss$/i,
-                use:[css.loader,'css-loader','sass-loader']
+                use:[
+                  {
+                    loader: css.loader,
+                    options: { /* options here */ }
+                  },
+                  'css-loader',
+                  'sass-loader'
+                ]
             },
             {
                 test:/\.(jpg|png|jpeg|gif|webp)$/i,
@@ -42,6 +51,16 @@ module.exports = merge(common,{
                 generator:{
                     filename:'IMG/[hash].[name][ext]',
                 }
+            },
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-react'],
+                    },
+                },
             }
         ]
     },
