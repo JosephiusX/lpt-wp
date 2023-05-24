@@ -32,7 +32,7 @@ module.exports = merge(common,{
     plugins:[
         new html({
             filename:'index.html',
-            template:'./public/index.html',
+            template: path.resolve(__dirname, '../public/index.html'),
             title:'Asset Modules',
             minify:false,
         })
