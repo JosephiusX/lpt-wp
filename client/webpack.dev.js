@@ -13,9 +13,11 @@ module.exports = merge(common,{
     devServer: {
         port: 3000,
         proxy: {
-            '/api': 'http://localhost:5000'
+            '/api': 'http://localhost:5000',
+            "/auth/google": 'http://localhost:5000',
+            '/auth/google/callback': 'http://localhost:5000'
         }
-      },
+    },
     module:{
         rules:[
             {
