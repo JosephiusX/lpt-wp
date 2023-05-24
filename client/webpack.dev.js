@@ -10,6 +10,9 @@ module.exports = merge(common,{
     output: {
         publicPath: '/',
     },
+    devServer: {
+        port: 3000
+      },
     module:{
         rules:[
             {
