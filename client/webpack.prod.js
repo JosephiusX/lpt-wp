@@ -4,6 +4,9 @@ const path = require('path')
 const cssMinimizer = require('css-minimizer-webpack-plugin')
 const css = require('mini-css-extract-plugin')
 const html = require('html-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin');
+// const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+
 
 const Dotenv = require('dotenv-webpack');
 
@@ -13,6 +16,7 @@ module.exports = merge(common,{
     optimization:{
         chunkIds:'named',// default to 'deterministic' under prod. mode
         usedExports: true, // Enable tree shaking
+        minimize: true,
         minimizer:[
             '...',
             new cssMinimizer()

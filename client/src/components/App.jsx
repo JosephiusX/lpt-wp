@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Routes} from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
@@ -15,14 +15,14 @@ class App extends Component {
   }
 
   render() {
-      return (
+    return (
       <div className="container">
         <BrowserRouter>
-            <Navigation className="box" />
+          <Navigation className="box" />
           <Routes>
-            <Route path="/" exact component={Landing} />
-            <Route path="/prices" exact component={Prices} />
-            <Route path="/surveys/new" component={SurveyNew}/>
+            <Route path="/" element={<Landing />} />
+            <Route path="/prices" element={<Prices />} />
+            <Route path="/surveys/new" element={<SurveyNew />} />
           </Routes>
         </BrowserRouter>
       </div>
@@ -30,4 +30,4 @@ class App extends Component {
   }
 }
 
-export default connect(null, actions)(App);// 1st arg is for mapstatetoprops(null), 2nd actions. Both assigned to App as props.(we can use fetchUser in App now.) 
+export default connect(null, actions)(App)
