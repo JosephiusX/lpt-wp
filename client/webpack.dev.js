@@ -32,10 +32,9 @@ module.exports = merge(common,{
     plugins:[
         new html({
             filename:'index.html',
-            template:'./template/tpl.html',
+            template:'./public/index.html',
             title:'Asset Modules',
             minify:false,
-            favicon:'./assets/favicon.ico'
         })
     ]
 })

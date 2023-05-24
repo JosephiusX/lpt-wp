@@ -72,10 +72,9 @@ module.exports = merge(common,{
         }),
         new html({
             filename:'index.html',
-            template:'./template/tpl.html',
+            template:'./public/index.html',
             title:'Asset Modules',
             minify:false,
-            favicon:'./assets/favicon.ico',
             publicPath:'/html'
         })
     ]
