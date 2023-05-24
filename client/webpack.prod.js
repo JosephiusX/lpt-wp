@@ -72,7 +72,7 @@ module.exports = merge(common,{
         }),
         new html({
             filename:'index.html',
-            template: path.resolve(__dirname, '../public/index.html'),
+            template: path.resolve(__dirname, './public/index.html'),
             title:'Asset Modules',
             minify:false,
             publicPath:'/html'
