@@ -30,7 +30,7 @@ app.use(passport.session());
 require('./routes/authRoutes')(app); // Routes from authRoutes, Directly required instead of named
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
+  app.use(express.static(path.resolve(__dirname, 'client', 'build')));
 
   const path = require('path');
   app.get('*', (req, res) => {
