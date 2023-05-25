@@ -2,7 +2,7 @@
   "name": "client",
   "version": "1.0.0",
   "private": true,
-  "proxy":true,
+  "proxy": true,
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "serve": "webpack serve --config webpack.dev.js"
@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "axios": "^1.4.0",
+    "fs": "^0.0.1-security",
     "http-proxy-middleware": "^2.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

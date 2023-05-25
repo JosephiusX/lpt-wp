@@ -1,27 +1,36 @@
 const passport = require('passport');
 
-module.exports = (app) => {
-  app.get(// when user route
-    '/auth/google', // Kick to OAuth flow. "google": internal identifyer of the strategy 
+module.exports = function(app) {
+  app.get(
+    '/auth/google',
     passport.authenticate('google', {
-      scope: ['profile', 'email'], // User information from account granted access to when authorized
-      callbackURL: '/auth/google/callback'
+      scope: ['profile', 'email']
     })
   );
-  
+
   app.get(
     '/auth/google/callback',
-     passport.authenticate('google'), // passport is a middleware specifically for this route
-  (req,res) => { // allows us to test deployment in browser [railway]
-    res.redirect('/surveys');// tates user to the user profile
-  }); 
+    passport.authenticate('google'),
+    function(req, res) {
+      res.redirect('/prices');
+    }
+  );
 
-  app.get('/api/logout', (req, res) => {
-    req.logout(() => { // Add a callback function here
-      res.redirect('/'); // Redirect to the starting point after logout
+  app.get('/api/logout', function(req, res) {
+    req.logout(function(err) {
+      if (err) {
+        // Handle the error
+        console.error(err);
+        res.status(500).send('Error logging out');
+      } else {
+        // Redirect the user after a successful logout
+        res.redirect('/');
+      }
     });
   });
-  // this lets us know weather or not the user is logged in or not for condsitional rendering.
-  app.get('/api/current_user',(req, res) => res.send(req.user)); 
 
+  app.get('/api/current_user', function(req, res) {
+    res.send(req.user);
+  });
 };
+
