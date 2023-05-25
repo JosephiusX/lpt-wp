@@ -11,13 +11,28 @@ module.exports = merge(common,{
         publicPath: '/',
     },
     devServer: {
+        historyApiFallback: true,
+        static: './',
+        hot: true,
         port: 3000,
         proxy: {
-            '/api': 'http://localhost:5000',
-            "/auth/google": 'http://localhost:5000',
-            '/auth/google/callback': 'http://localhost:5000'
-        }
-    },
+          '/api': {
+            target: 'http://localhost:5000',
+            changeOrigin: true,
+            secure: false,
+          },
+          "/auth/google": {
+            target: 'http://localhost:5000',
+            changeOrigin: true,
+            secure: false,
+          },
+          '/auth/google/callback': {
+            target: 'http://localhost:5000',
+            changeOrigin: true,
+            secure: false,
+          },
+        },
+      },
     module:{
         rules:[
             {
