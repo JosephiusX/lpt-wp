@@ -18,17 +18,17 @@ module.exports = merge(common,{
         proxy: {
           '/api': {
             target: 'http://localhost:5000',
-            changeOrigin: true,
+            // changeOrigin: true,
             secure: false,
           },
           "/auth/google": {
             target: 'http://localhost:5000',
-            changeOrigin: true,
+            // changeOrigin: true,
             secure: false,
           },
           '/auth/google/callback': {
             target: 'http://localhost:5000',
-            changeOrigin: true,
+            // changeOrigin: true,
             secure: false,
           },
         },

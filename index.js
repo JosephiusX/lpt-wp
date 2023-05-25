@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const cookieSession = require('cookie-session');
+const session = require('express-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
@@ -12,12 +12,19 @@ mongoose.connect(keys.mongoURI);
 const app = express();
 
 app.use(bodyParser.json());
+
 app.use(
-  cookieSession({
-    maxAge: 30 * 24 * 60 * 60 * 1000,
-    keys: [keys.cookieKey]
+  session({
+    secret: keys.cookieKey, // same key you used for cookie-session
+    resave: false, // don't save session if unmodified
+    saveUninitialized: false, // don't create session until something is stored
+    cookie: {
+      maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+      secure: false // set this to true if you are using https
+    }
   })
 );
+
 app.use(passport.initialize());
 app.use(passport.session());
 
