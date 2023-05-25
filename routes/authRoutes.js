@@ -1,6 +1,6 @@
 const passport = require('passport');
 
-module.exports = function(app) {
+module.exports = app => {
   app.get(
     '/auth/google',
     passport.authenticate('google', {
@@ -11,26 +11,17 @@ module.exports = function(app) {
   app.get(
     '/auth/google/callback',
     passport.authenticate('google'),
-    function(req, res) {
-      res.redirect('/prices');
+    (req, res) => {
+      res.redirect('/surveys');
     }
   );
 
-  app.get('/api/logout', function(req, res) {
-    req.logout(function(err) {
-      if (err) {
-        // Handle the error
-        console.error(err);
-        res.status(500).send('Error logging out');
-      } else {
-        // Redirect the user after a successful logout
-        res.redirect('/');
-      }
-    });
+  app.get('/api/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
   });
 
-  app.get('/api/current_user', function(req, res) {
+  app.get('/api/current_user', (req, res) => {
     res.send(req.user);
   });
 };
-
