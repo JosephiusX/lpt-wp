@@ -795,3 +795,4 @@ in server npm i body-parser
 update scripts for postbuild
 
 update build command in railway settings for the deployment
+

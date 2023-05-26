@@ -1,3 +1,4 @@
+// C:\Users\josep\OneDrive\Desktop\lpt-wp\server\models\User.js
 const mongoose = require('mongoose');
 const { Schema } = mongoose; //const Schema = mongoose.Schema; // pull property from mongoose obj
 

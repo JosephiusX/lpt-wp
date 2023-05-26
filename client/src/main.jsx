@@ -1,3 +1,4 @@
+// C:\Users\josep\OneDrive\Desktop\lpt-wp\server\client\src\main.jsx
 import './sass/main.scss'
 import React from 'react';
 import ReactDOM from 'react-dom/client'

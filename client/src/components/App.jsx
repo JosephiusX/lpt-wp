@@ -1,3 +1,4 @@
+// C:\Users\josep\OneDrive\Desktop\lpt-wp\server\client\src\components\App.jsx
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { connect } from 'react-redux';

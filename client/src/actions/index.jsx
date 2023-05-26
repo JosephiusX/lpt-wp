@@ -1,3 +1,4 @@
+// C:\Users\josep\OneDrive\Desktop\lpt-wp\server\client\src\actions\index.jsx
 import axios from 'axios';
 import { FETCH_USER } from './types';
 
