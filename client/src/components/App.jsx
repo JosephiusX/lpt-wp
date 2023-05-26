@@ -22,7 +22,7 @@ class App extends Component {
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/prices" element={<Prices />} />
-            <Route path="/surveys/new" element={<SurveyNew />} />
+           
           </Routes>
         </BrowserRouter>
       </div>

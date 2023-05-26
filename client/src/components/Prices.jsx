@@ -16,7 +16,7 @@ return (
 
             <h1 className="heading-primary">
               <span className="heading-primary--main">Request Event</span>
-              <span class="heading-primary--sub">Let Us Make Your Day</span>
+              <span className="heading-primary--sub">Let Us Make Your Day</span>
             </h1>  
           </div>
     </header>

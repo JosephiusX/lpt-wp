@@ -13,7 +13,7 @@ const Header = () => {
 
               <h1 className="heading-primary">
                 <span className="heading-primary--main">Little Pizza Truck</span>
-                <span class="heading-primary--sub">Cultivating connections by breaking bread</span>
+                <span className="heading-primary--sub">Cultivating connections by breaking bread</span>
               </h1>
             </div>
       </header>
