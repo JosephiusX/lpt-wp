@@ -1,3 +1,4 @@
+// C:\Users\josep\OneDrive\Desktop\lpt-wp\server\client\webpack.common.js
 const path = require('path')
 
 module.exports = {
@@ -19,7 +20,7 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                    presets: ['@babel/preset-react'],
+                        presets: ['@babel/preset-env', '@babel/preset-react'],
                     },
                 },
               },

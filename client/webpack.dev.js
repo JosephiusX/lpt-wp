@@ -1,3 +1,4 @@
+// C:\Users\josep\OneDrive\Desktop\lpt-wp\server\client\webpack.dev.js
 const {merge} = require('webpack-merge')
 const common = require('./webpack.common.js')
 const path = require('path')
@@ -27,6 +28,11 @@ module.exports = merge(common,{
             secure: false,
           },
           '/auth/google/callback': {
+            target: 'http://localhost:5000',
+            // changeOrigin: true,
+            secure: false,
+          },
+          '/api/logout': {
             target: 'http://localhost:5000',
             // changeOrigin: true,
             secure: false,

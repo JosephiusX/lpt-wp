@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 const FloatingNav = ({ auth }) => {
 
@@ -19,9 +18,6 @@ const FloatingNav = ({ auth }) => {
 
   return (
     <div className="navigation">
-
-
-      
       <input type="checkbox" className="navigation__checkbox" id="navi-toggle" />
       <label htmlFor="navi-toggle" className="navigation__button">
         <span className="navigation__icon">&nbsp;</span>
@@ -33,8 +29,6 @@ const FloatingNav = ({ auth }) => {
         </ul>
       </nav>
     </div>
-
-    
   );
 };
 

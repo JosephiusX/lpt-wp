@@ -1,63 +1,32 @@
-const {merge} = require('webpack-merge')
-const common = require('./webpack.common.js')
-const path = require('path')
-const cssMinimizer = require('css-minimizer-webpack-plugin')
-const css = require('mini-css-extract-plugin')
-const html = require('html-webpack-plugin')
+const { merge } = require('webpack-merge');
+const common = require('./webpack.common.js');
+const path = require('path');
+const cssMinimizer = require('css-minimizer-webpack-plugin');
+const css = require('mini-css-extract-plugin');
+const html = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-// const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-
-
 const Dotenv = require('dotenv-webpack');
+const babelLoader = require('babel-loader');
 
-module.exports = merge(common,{
-    mode:'production',
+module.exports = merge(common, {
+    mode: 'production',
     devtool: 'source-map',
-    optimization:{
-        chunkIds:'named',// default to 'deterministic' under prod. mode
-        usedExports: true, // Enable tree shaking
+    optimization: {
+        chunkIds: 'named',
+        usedExports: true,
         minimize: true,
-        minimizer:[
-            '...',
+        minimizer: [
+            new TerserPlugin(),
             new cssMinimizer()
         ]
     },
-    output:{
+    output: {
         publicPath: '/',
     },
-    module:{
-        rules:[
+    module: {
+        rules: [
             {
-                test:/\.css$/i,
-                //use:['style-loader','css-loader']
-                use:[
-                  {
-                    loader: css.loader,
-                    options: { /* options here */ }
-                  },
-                  'css-loader'
-                ]
-            },
-            {
-                test:/\.scss$/i,
-                use:[
-                  {
-                    loader: css.loader,
-                    options: { /* options here */ }
-                  },
-                  'css-loader',
-                  'sass-loader'
-                ]
-            },
-            {
-                test:/\.(jpg|png|jpeg|gif|webp)$/i,
-                type:'asset/resource', // file-loader
-                generator:{
-                    filename:'IMG/[hash].[name][ext]',
-                }
-            },
-            {
-                test: /\.(js|jsx)$/,
+                test: /\.(js|jsx)$/i,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
@@ -65,21 +34,36 @@ module.exports = merge(common,{
                         presets: ['@babel/preset-env', '@babel/preset-react'],
                     },
                 },
+            },
+            {
+                test: /\.(css|scss)$/i,
+                use: [
+                    css.loader,
+                    'css-loader',
+                    'sass-loader'
+                ]
+            },
+            {
+                test: /\.(jpg|png|jpeg|gif|webp)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'IMG/[hash].[name][ext]',
+                }
             }
         ]
     },
-    plugins:[
+    plugins: [
         new Dotenv(),
         new css({
-            filename:'[name].css',
-            chunkFilename:'[name].chunk_css.css'
+            filename: '[name].css',
+            chunkFilename: '[name].chunk_css.css'
         }),
         new html({
-            filename:'index.html',
+            filename: 'index.html',
             template: path.resolve(__dirname, './public/index.html'),
-            title:'Asset Modules',
-            minify:false,
-            publicPath:'/html'
+            title: 'Asset Modules',
+            minify: false,
+            publicPath: '/html'
         })
     ]
-})
+});
