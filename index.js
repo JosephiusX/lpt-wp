@@ -1,7 +1,6 @@
-// C:\Users\josep\OneDrive\Desktop\lpt-wp\server\index.js
 const express = require('express');
 const mongoose = require('mongoose');
-const session = require('express-session');
+const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
@@ -15,14 +14,11 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use(
-  session({
-    secret: keys.cookieKey, // same key you used for cookie-session
-    resave: false, // don't save session if unmodified
-    saveUninitialized: false, // don't create session until something is stored
-    cookie: {
-      maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
-      secure: false // set this to true if you are using https
-    }
+  cookieSession({
+    name: 'session',
+    keys: [keys.cookieKey],
+    maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+    secure: process.env.NODE_ENV === 'production' // true if production
   })
 );
 
@@ -34,11 +30,8 @@ require('./routes/authRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets
-  // like our main.js file, or main.css file!
   app.use(express.static('client/build'));
 
-  // Express will serve up the index.html file
-  // if it doesn't recognize the route
   const path = require('path');
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));

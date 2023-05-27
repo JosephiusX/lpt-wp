@@ -11,8 +11,12 @@ module.exports = (app) => {
 
   app.get(
     '/auth/google/callback',
-    passport.authenticate('google'),
+    passport.authenticate('google', { session: false }),
     (req, res) => {
+      req.session.user = {
+        id: req.user.id,
+        // Store any other user fields that you need in the session
+      };
       res.redirect('/prices');
     }
   );
