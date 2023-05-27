@@ -37,18 +37,18 @@ const AboutUs = () => {
   return (
     <section className="section-about">
       <div className="row">
-      <div className="u-center-text">
-        <h2 className="heading-secondary u-margin-bottom-medium">
-          About Us
-        </h2>
-      </div>
+        <div className="u-center-text">
+          <h2 className="heading-secondary u-margin-bottom-medium">
+            About Us
+          </h2>
+        </div>
 
         <div className="col-1-of-2">
           <h3 className="heading-tertiary u-margin-bottom-small">
-          Our Philosophy
+            Our Philosophy
           </h3>
           <p className="paragraph">
-          At Little Pizza Truck, we believe that sharing pizza has the unique power to unite people with joyful hearts and full stomachs. As a family-owned catering business, we provide tailored, upscale experiences using fresh, seasonal ingredients and eco-friendly practices like locally-sourced produce. Our team is committed to enhancing events, fostering connections, and respecting our food's origins while minimizing our environmental impact. We strive to create unforgettable experiences that can be enjoyed anywhere. 
+            At Little Pizza Truck, we believe that sharing pizza has the unique power to unite people with joyful hearts and full stomachs. As a family-owned catering business, we provide tailored, upscale experiences using fresh, seasonal ingredients and eco-friendly practices like locally-sourced produce. Our team is committed to enhancing events, fostering connections, and respecting our food's origins while minimizing our environmental impact. We strive to create unforgettable experiences that can be enjoyed anywhere.
           </p>
 
           {/* <a href="#" className="btn-text">
@@ -60,7 +60,7 @@ const AboutUs = () => {
             <img
               srcSet={`${image} 300w, ${imageLarge} 1000w`}
               sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 20vw, 300px"
-              alt="Photo 0"
+              alt=""
               className="composition__photo composition__photo--p0"
               src={imageLarge}
             />
@@ -68,15 +68,15 @@ const AboutUs = () => {
             <img
               srcSet={`${image1} 300w, ${image1Large} 1000w`}
               sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 20vw, 300px"
-              alt="Photo 1"
+              alt=""
               className="composition__photo composition__photo--p1"
               src={image1Large}
             />
 
             <img
               srcSet={`${image2} 300w, ${image2Large} 1000w`}
-              sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 20vw, 300px"
-              alt="Photo 2"
+              sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 20vw"
+              alt=""
               className="composition__photo composition__photo--p2"
               src={image2Large}
             />
@@ -84,7 +84,7 @@ const AboutUs = () => {
             <img
               srcSet={`${image3} 300w, ${image3Large} 1000w`}
               sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 20vw, 300px"
-              alt="Photo 3"
+              alt=""
               className="composition__photo composition__photo--p3"
               src={image3Large}
             />
@@ -92,7 +92,7 @@ const AboutUs = () => {
             <img
               srcSet={`${image4} 300w, ${image4Large} 1000w`}
               sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 20vw, 300px"
-              alt="Photo 4"
+              alt=""
               className="composition__photo composition__photo--p4"
               src={image4Large}
             />
@@ -100,7 +100,7 @@ const AboutUs = () => {
             <img
               srcSet={`${image5} 300w, ${image5Large} 1000w`}
               sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 20vw, 300px"
-              alt="Photo 5"
+              alt=""
               className="composition__photo composition__photo--p5"
               src={image5Large}
             />
@@ -108,7 +108,7 @@ const AboutUs = () => {
             <img
               srcSet={`${image6} 300w, ${image6Large} 1000w`}
               sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 20vw, 300px"
-              alt="Photo 6"
+              alt=""
               className="composition__photo composition__photo--p6"
               src={image6Large}
             />
@@ -116,7 +116,7 @@ const AboutUs = () => {
             <img
               srcSet={`${image7} 300w, ${image7Large} 1000w`}
               sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 20vw, 300px"
-              alt="Photo 7"
+              alt=""
               className="composition__photo composition__photo--p7"
               src={image7Large}
             />
@@ -124,7 +124,7 @@ const AboutUs = () => {
             <img
               srcSet={`${image8} 300w, ${image8Large} 1000w`}
               sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 20vw, 300px"
-              alt="Photo 8"
+              alt=""
               className="composition__photo composition__photo--p8"
               src={image8Large}
             />
@@ -132,7 +132,7 @@ const AboutUs = () => {
             <img
               srcSet={`${image9} 300w, ${image9Large} 1000w`}
               sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 20vw, 300px"
-              alt="Photo 9"
+              alt=""
               className="composition__photo composition__photo--p9"
               src={image9Large}
             />
@@ -140,7 +140,7 @@ const AboutUs = () => {
             <img
               srcSet={`${image10} 300w, ${image10Large} 1000w`}
               sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 20vw, 300px"
-              alt="Photo 10"
+              alt=""
               className="composition__photo composition__photo--p10"
               src={image10Large}
             />
