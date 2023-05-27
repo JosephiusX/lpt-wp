@@ -1,4 +1,4 @@
-// C:\Users\josep\OneDrive\Desktop\lpt-wp\server\routes\authRoutes.js
+// C:\Users\josep\OneDrive\Desktop\lpt-cra\server\routes\authRoutes.js
 const passport = require('passport');
 
 module.exports = (app) => {

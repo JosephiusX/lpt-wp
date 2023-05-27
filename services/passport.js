@@ -1,4 +1,4 @@
-// C:\Users\josep\OneDrive\Desktop\lpt-wp\server\services\passport.js
+//C:\Users\josep\OneDrive\Desktop\lpt-cra\server\services\passport.js
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose');

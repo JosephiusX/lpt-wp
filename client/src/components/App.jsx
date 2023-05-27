@@ -1,6 +1,6 @@
 // C:\Users\josep\OneDrive\Desktop\lpt-wp\server\client\src\components\App.jsx
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
@@ -18,12 +18,11 @@ class App extends Component {
   render() {
     return (
       <div className="container">
+        <Navigation className="box" />
         <BrowserRouter>
-          <Navigation className="box" />
           <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/prices" element={<Prices />} />
-           
+              <Route path="/" element={<Landing />} />
+              <Route path="/prices" element={<Prices />} />
           </Routes>
         </BrowserRouter>
       </div>

@@ -4,7 +4,6 @@
   "description": "*# 10 to run server locally\r *Hosted location @ # 16 along with how to save changes and shut down instructions to save credits.",
   "main": "index.js",
   "homepage": "https://wild-comparison-production.up.railway.app",
-  "proxy": true,
   "engines": {
     "node": "12.16.3",
     "npm": "6.14.4"
@@ -22,7 +21,7 @@
   "dependencies": {
     "body-parser": "^1.20.2",
     "concurrently": "^8.0.1",
-    "cookie-session": "^2.0.0",
+    "cookie-session": "^1.4.0",
     "express": "^4.18.2",
     "mongoose": "^7.2.0",
     "nodemon": "^2.0.22",
