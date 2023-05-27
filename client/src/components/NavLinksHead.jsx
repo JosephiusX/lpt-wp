@@ -29,7 +29,7 @@ const NavLinksHead = ({auth}) => {
   return (
     <nav className="" >
       <Link className='logo logo__box'to={auth ? '/prices' : '/'}>
-          <img src={Logo} className='logo__icon' />
+          <img src={Logo} alt="" className='logo__icon' />
       </Link>
       {renderContent()}
     </nav>

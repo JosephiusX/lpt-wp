@@ -27,7 +27,7 @@ const NavLinksFoot = ({auth}) => {
   return (
     <nav className="logo" >
       <Link className='logo logo__box-footer' to={auth ? '/prices' : '/'}>
-          <img src={Logo} className='logo__icon-footer' />
+          <img src={Logo} alt="" className='logo__icon-footer' />
       </Link>
       {renderContent()}
     </nav>

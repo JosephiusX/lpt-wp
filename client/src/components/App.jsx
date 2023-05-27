@@ -8,7 +8,7 @@ import Navigation from './Navigation';
 import Landing from './Landing';
 import Prices from './Prices';
 
-const SurveyNew = () => <h2>SurveyNew</h2>
+// const SurveyNew = () => <h2>SurveyNew</h2>
 
 class App extends Component {
   componentDidMount() { // Once component is visible, will be used to fetch current user. 
