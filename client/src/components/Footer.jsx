@@ -11,27 +11,27 @@ const Footer = () => {
           <div className="footer__navigation">
             <ul className="footer__list">
               <li className="footer__item">
-                <a href="#" className="footer__link">
+                <a href="/" className="footer__link">
                   Home
                 </a>
               </li>
               <li className="footer__item">
-                <a href="#" className="footer__link">
+                <a href="/" className="footer__link">
                   About us
                 </a>
               </li>
               <li className="footer__item">
-                <a href="#" className="footer__link">
+                <a href="/price" className="footer__link">
                   Pricing
                 </a>
               </li>
               <li className="footer__item">
-                <a href="#" className="footer__link">
+                <a href="/menu" className="footer__link">
                   Menu
                 </a>
               </li>
               <li className="footer__item">
-                <a href="#" className="footer__link">
+                <a href="/contact" className="footer__link">
                   contact
                 </a>
               </li>
@@ -41,11 +41,11 @@ const Footer = () => {
         {/* <div className="col-1-of-2">
           <p className="footer__copyright">
           Built by{' '}
-          <a href="#" className="footer__link">
+          <a href="/" className="footer__link">
           Jonas Schmedtmann
           </a>{' '}
           for his online course{' '}
-          <a href="#" className="footer__link">
+          <a href="/" className="footer__link">
           Advanced CSS and Sass
           </a>
           . Copyright &copy;
