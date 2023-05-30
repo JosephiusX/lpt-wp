@@ -1,25 +1,22 @@
-// C:\Users\josep\OneDrive\Desktop\lpt-cra\server\client\src\index.js
-import './sass/main.scss'
+import './sass/main.scss';
 import React from 'react';
-import ReactDOM from 'react-dom/client'
-import { Provider } from 'react-redux';
+import ReactDOM from 'react-dom/client';
 import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
-
-import {}
-
-import App from './components/App'
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import App from './components/App';
 import reducers from './reducers';
 
-const store = createStore(reducers, {}, applyMiddleware(reduxThunk)); // 1st arg-reducers(=> fn returning an array),2nd Arg-initial state(empty object), 3rd- applyMiddleware
+const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
-const rootContainer = document.querySelector('#root');
-const root = ReactDOM.createRoot(rootContainer);
-
+// Wrap your rendering code with createRoot
+const rootElement = document.getElementById('root');
+const root = ReactDOM.createRoot(rootElement);
 root.render(
   <Provider store={store}>
-    
-    <App />
-    
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>
 );

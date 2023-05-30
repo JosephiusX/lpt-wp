@@ -1,33 +1,30 @@
-// C:\Users\josep\OneDrive\Desktop\lpt-wp\server\client\src\components\App.jsx
+// C:\Users\josep\OneDrive\Desktop\lpt-cra\server\client\src\components\App.jsx
 import React, { Component } from 'react';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-
-import Navigation from './Navigation';
+import { Routes, Route } from 'react-router-dom';
 import Landing from './Landing';
 import Prices from './Prices';
 
-// const SurveyNew = () => <h2>SurveyNew</h2>
-
 class App extends Component {
-  componentDidMount() { // Once component is visible, will be used to fetch current user. 
+  componentDidMount() {
     this.props.fetchUser();
   }
 
   render() {
+    const routes = (
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/prices" element={<Prices />} />
+      </Routes>
+    );
+  
     return (
-      <div className="container">
-        <Navigation className="box" />
-        <BrowserRouter>
-          <Routes>
-              <Route path="/" element={<Landing />} />
-              <Route path="/prices" element={<Prices />} />
-          </Routes>
-        </BrowserRouter>
+      <div>
+        {routes}
       </div>
     );
   }
 }
 
-export default connect(null, actions)(App)
+export default connect(null, actions)(App);
