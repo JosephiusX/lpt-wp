@@ -1,4 +1,3 @@
-//C:\Users\josep\OneDrive\Desktop\lpt-cra\server\index.js
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
