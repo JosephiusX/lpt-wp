@@ -2,12 +2,6 @@
   "name": "server",
   "version": "1.0.0",
   "description": "*# 10 to run server locally\r *Hosted location @ # 16 along with how to save changes and shut down instructions to save credits.",
-  "main": "index.js",
-  "homepage": "https://wild-comparison-production.up.railway.app",
-  "engines": {
-    "node": "12.16.3",
-    "npm": "6.14.4"
-  },
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
