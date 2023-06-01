@@ -1,9 +1,9 @@
-// C:\Users\josep\OneDrive\Desktop\lpt-wp\server\models\User.js
 const mongoose = require('mongoose');
-const { Schema } = mongoose; //const Schema = mongoose.Schema; // pull property from mongoose obj
+const { Schema } = mongoose;
 
-const userSchema = new Schema({ // init. schema
-  googleId: String
+const userSchema = new Schema({
+  googleId: String,
+  credits: { type: Number, default: 0 }
 });
 
-mongoose.model('users', userSchema) // create model class
+mongoose.model('users', userSchema);
