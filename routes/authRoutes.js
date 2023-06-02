@@ -22,16 +22,16 @@ module.exports = (app) => {
   );
 
   app.get('/api/logout', (req, res) => {
-    req.logout((err) => {
-      if (err) {
-        // Handle the error
-        console.error(err);
-        res.status(500).send('Error logging out');
-      } else {
-        // Redirect the user after a successful logout
-        res.redirect('/');
-      }
-    });
+    console.log('Before logout', req.session);
+    req.logout();
+    console.log('After logout', req.session);
+    
+    // Manually clear the session cookie
+    req.session = null;
+    console.log('After clearing session', req.session);
+  
+    // Redirect the user after a successful logout
+    res.redirect('/');
   });
 
   app.get('/api/current_user', (req, res) => res.send(req.user));
