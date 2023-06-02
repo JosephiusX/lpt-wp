@@ -11,6 +11,7 @@ import { FETCH_USER } from './types';
 
 export const fetchUser = () => async dispatch => { // fetch user fn implicidly calls async dispatch functio
   const res = await axios.get('/api/current_user'); // set response constant to await the api request.
+  console.log(res.data); // Add this line
   dispatch({ type: FETCH_USER, payload: res.data });// finally dispatch 
 };
 

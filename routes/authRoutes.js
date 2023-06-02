@@ -11,7 +11,7 @@ module.exports = (app) => {
 
   app.get(
     '/auth/google/callback',
-    passport.authenticate('google', { session: false }),
+    passport.authenticate('google', { session: true }),
     (req, res) => {
       req.session.user = {
         id: req.user.id,

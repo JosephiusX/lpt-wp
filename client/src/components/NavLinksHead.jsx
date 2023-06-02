@@ -1,3 +1,4 @@
+// C:\Users\josep\OneDrive\Desktop\lpt-cra\server\client\src\components\NavLinksHead.jsx
 import React from "react";
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -8,18 +9,19 @@ const NavLinksHead = ({auth}) => {
 
   const renderContent = () => {
     switch (auth) {
+
       case null:
         return null;
       case false:
         return (
           <div className='cta'>
-            <a className='btn btn--white btn--animated cta__request  ' href="/auth/google">Request Event</a>
+            <a className='btn btn--white btn--animated cta__request ' href="/auth/google">Request Event</a>
           </div>
         );
       default:
         return (
           <div className='cta'>
-            <a className='btn btn--white btn--animated cta__logout' href="/api/logout">Logout</a>  
+            <a className='btn btn--white btn--animated cta__logout ' href="/api/logout">Logout</a>  
           </div>
 
         )

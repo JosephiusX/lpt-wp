@@ -1,3 +1,4 @@
+// C:\Users\josep\OneDrive\Desktop\lpt-cra\server\client\src\index.js
 import './sass/main.scss';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
