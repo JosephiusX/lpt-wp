@@ -1,3 +1,4 @@
+// C:\Users\josep\OneDrive\Desktop\lpt-cra\server\client\src\components\Footer.jsx
 // Footer.js
 import React from 'react';
 import NavLinksFoot from './NavLinksFoot';

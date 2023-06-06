@@ -1,43 +1,42 @@
 // C:\Users\josep\OneDrive\Desktop\lpt-cra\server\client\src\components\NavLinksHead.jsx
 import React from "react";
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import Logo from '../assets/img/logo-white.svg';
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import Logo from "../assets/img/logo-white.svg";
 
-
-const NavLinksHead = ({auth}) => {
-
+const NavLinksHead = ({ auth }) => {
   const renderContent = () => {
     switch (auth) {
-
       case null:
         return null;
       case false:
         return (
-          <div className='cta'>
-            <a className='btn btn--white btn--animated cta__request ' href="/auth/google">Request Event</a>
+          <div className="cta">
+            <a href="/auth/google" className="btn btn--white btn--animated cta__request">
+              Request Event
+            </a>
           </div>
         );
       default:
         return (
-          <div className='cta'>
-            <a className='btn btn--white btn--animated cta__logout ' href="/api/logout">Logout</a>  
+          <div className="cta">
+            <a href="/api/logout" className="btn btn--white btn--animated cta__logout">
+                Logout
+            </a>
           </div>
-
-        )
+        );
     }
   };
 
   return (
-    <nav className="" >
-      <Link className='logo logo__box'to={auth ? '/prices' : '/'}>
-          <img src={Logo} alt="" className='logo__icon' />
+    <nav className="">
+      <Link to={auth ? "/prices" : "/"} className="logo logo__box">
+        <img src={Logo} alt="" className="logo__icon" />
       </Link>
       {renderContent()}
     </nav>
   );
 };
-
 
 function mapStateToProps({ auth }) {
   return { auth };

@@ -1,3 +1,4 @@
+// C:\Users\josep\OneDrive\Desktop\lpt-cra\server\client\src\components\Header.jsx
 import React from 'react';
 import NavLinksHead from './NavLinksHead';
 

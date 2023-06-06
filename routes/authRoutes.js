@@ -11,7 +11,7 @@ module.exports = (app) => {
 
   app.get(
     '/auth/google/callback',
-    passport.authenticate('google', { session: true }),
+    passport.authenticate('google', { session: false }),
     (req, res) => {
       req.session.user = {
         id: req.user.id,
@@ -25,13 +25,9 @@ module.exports = (app) => {
     console.log('Before logout', req.session);
     req.logout();
     console.log('After logout', req.session);
-    
-    // Manually clear the session cookie
-    req.session = null;
+    req.session = null;// Manually clear the session cookie
     console.log('After clearing session', req.session);
-  
-    // Redirect the user after a successful logout
-    res.redirect('/');
+    res.redirect('/'); // Redirect the user after a successful logout
   });
 
   app.get('/api/current_user', (req, res) => res.send(req.user));

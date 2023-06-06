@@ -27,8 +27,10 @@ passport.use(
     {
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      callbackURL: '/auth/google/callback',
-      proxy: true,
+      callbackURL: process.env.NODE_ENV === 'production' 
+      ? "https://wild-comparison-production.up.railway.app/auth/google/callback" 
+      : "http://localhost:3000/auth/google/callback",
+  proxy: process.env.NODE_ENV === 'production'
     },
     async (accessToken, refreshToken, profile, done) => {
       const existingUser = await User.findOne({ googleId: profile.id });

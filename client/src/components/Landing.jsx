@@ -1,3 +1,4 @@
+// C:\Users\josep\OneDrive\Desktop\lpt-cra\server\client\src\components\Landing.jsx
 import React from "react";
 import Header from "./Header";
 import AboutUs from "./AboutUs";

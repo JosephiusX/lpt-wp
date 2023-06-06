@@ -1,3 +1,4 @@
+// server\client\src\components\Prices.jsx
 import React from 'react';
 import NavLinksHead from './NavLinksHead';
 import PricingOverview from './PricingOverview';
